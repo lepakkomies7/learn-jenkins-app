@@ -46,6 +46,12 @@ pipeline {
                 # Test and verify, that the index.html exists in the "build" directory
                 test -f build/index.html
 
+                # current directory
+                pwd
+
+                # Confirm, that Jenkins has the writing rights for the test-results directory
+                chmod -R 777 test-results
+
                 # Verifying, that jest is installed
                 npm install jest-junit --save-dev
 

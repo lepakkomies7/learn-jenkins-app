@@ -46,7 +46,7 @@ pipeline {
                 # Test and verify, that the index.html exists in the "build" directory
                 test -f build/index.html
 
-                # 
+                # Verifying, that jest is installed
                 npm install jest-junit --save-dev
 
                 # Run the NPM test

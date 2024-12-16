@@ -46,6 +46,9 @@ pipeline {
                 # Test and verify, that the index.html exists in the "build" directory
                 test -f build/index.html
 
+                # 
+                npm install jest-junit --save-dev
+
                 # Run the NPM test
                 npm test
 
@@ -59,7 +62,7 @@ pipeline {
     }
     post {
         always {
-            junit 'test-results/junit.xml'
+            junit '**/test-results/junit.xml'
         }
     }
 }
